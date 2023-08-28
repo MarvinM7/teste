@@ -1,8 +1,13 @@
 import { SearchBar, Banner } from "@components";
+import api from "@config/api";
 
 import { banner } from "@constants";
 
-export default async function Home() {
+export default async function HomePage() {
+  /* const teste = await api({link: ''});
+
+  console.log({teste}); */
+
   return (
     <main className='overflow-hidden'>
       <Banner 
