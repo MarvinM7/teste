@@ -51,6 +51,30 @@ export const translateLanguage = ({language}: {language: string}) => {
     case 'it':
       response = 'Italiano';
       break;
+    case 'ja':
+      response = 'Japonês';
+      break;
+    case 'es':
+      response = 'Espanhol';
+      break;
+    case 'hr':
+      response = 'Croata';
+      break;
+    case 'he':
+      response = 'Hebraico';
+      break;
+    case 'hu':
+      response = 'Húngaro';
+      break;
+    case 'da':
+      response = 'Dinamarquês';
+      break;
+    case 'ru':
+      response = 'Russo';
+      break;
+    case 'zh':
+      response = 'Chinês';
+      break;
     default:
       response = language;
       break;

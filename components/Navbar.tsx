@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import Button from "@/components/Button";
 
 import { UserType } from "@types";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const router = useRouter();
   const [reload, setReload] = useState<boolean>(false);
 
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setUser(JSON.parse(localStorage?.getItem('user') ?? '{}'));
-  }, [reload]);
+  }, [reload, pathname]);
   
   const logout = () => {
     localStorage.clear();
