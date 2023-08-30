@@ -121,4 +121,4 @@ export const content = [
   },
 ]
 
-export const API = 'https://teste.com/';
+export const API = 'http://localhost:8080/';

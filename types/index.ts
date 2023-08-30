@@ -18,18 +18,17 @@ export interface InputProps {
 }
 
 export interface CardProps {
-  description: string;
-  handleClick: (data: string) => void;
   id: string;
+  language: string;
+  overview: string;
   title: string;
   type: string;
 }
 
 export interface PaginationProps {
-  page: string | null;
-  nextPage: () => void;
-  previousPage: () => void;
-  showNextPage?: boolean;
+  page: string;
+  query: string;
+  showNextPage: boolean;
 }
 
 interface BannerContentType {
@@ -39,12 +38,6 @@ interface BannerContentType {
 
 export interface BannerProps {
   content: BannerContentType[];
-}
-
-export interface CardProps {
-  description: string;
-  title: string;
-  type: string;
 }
 
 export interface SearchContentType {
@@ -66,6 +59,14 @@ export interface ContentType {
   year: string;
 }
 
+export interface Content2Type {
+  genre?: string;
+  overview: string;
+  language: string;
+  title: string;
+  type: string;
+}
+
 export interface UserType {
   email?: string;
   name?: string;
@@ -77,4 +78,27 @@ export interface SearchBarProps {
 
 export interface ApiProps {
   link: string;
+}
+
+export interface GetContentProps {
+  query: string;
+  page: string;
+}
+
+export interface Banner2Props {
+  content: Content2Type[];
+}
+
+export interface Card2Props {
+  content: Content2Type;
+}
+
+export interface ModalProps {
+  content: Content2Type;
+  onClose: () => void;
+  showModal: boolean;
+}
+
+export interface ContentProps {
+  content: Content2Type;
 }

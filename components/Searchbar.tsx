@@ -11,26 +11,26 @@ import { SearchBarProps } from "@types";
 const SearchBar = ({text = ''}: SearchBarProps) => {
   const router = useRouter();
 
-  const [term, setTerm] = useState<string>(text);
+  const [query, setQuery] = useState<string>(text);
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (term === '') {
+    if (query === '') {
       return alert('O campo não pode ser vazio.')
     }
 
-    router.push(`/search?term=${term}&page=1`);
+    router.push(`/search?query=${query}&page=1`);
   };
 
   return (
     <form className='flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4' onSubmit={handleSearch}>
       <div className='flex-1 max-sm:w-full flex gap-2 justify-start items-center relative'>
         <Input
-          onChange={setTerm}
+          onChange={setQuery}
           placeholder='Buscar...'
           type='text'
-          value={term}
+          value={query}
         />
         <Button
           icon={<MdSearch size={24} />}

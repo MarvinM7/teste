@@ -11,12 +11,18 @@ import { UserType } from "@types";
 
 const Navbar = () => {
   const router = useRouter();
+  const [reload, setReload] = useState<boolean>(false);
 
-  const user: UserType = JSON.parse(localStorage?.getItem('user') ?? '{}');
+  const [user, setUser] = useState<UserType>({});
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage?.getItem('user') ?? '{}'));
+  }, [reload]);
   
   const logout = () => {
     localStorage.clear();
     router.refresh();
+    setReload(!reload)
   }
 
   return (

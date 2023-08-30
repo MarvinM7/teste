@@ -1,10 +1,22 @@
 'use client';
 
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/components";
 
 import { PaginationProps } from "@/types";
 
-const Pagination = ({nextPage, page = '1', previousPage, showNextPage = true}: PaginationProps) => {
+const Pagination = ({page = '1', query, showNextPage}: PaginationProps) => {
+  const router = useRouter();
+
+  const nextPage = () => {
+    router.push(`/search?query=${query}&page=${+page + 1}`);
+  }
+
+  const previousPage = () => {
+    router.push(`/search?query=${query}&page=${+page - 1}`);
+  };
+
   return (
     <div className="flex flex-row justify-center items-centers gap-3">
       {page !== '1' && (

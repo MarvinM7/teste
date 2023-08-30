@@ -4,6 +4,8 @@ import NavBar from "./Navbar";
 import SearchBar from "./Searchbar";
 import Input from "./Input";
 import Banner from "./Banner";
+import Modal from "./Modal";
+import Content from "./Content";
 
 export {
   Button,
@@ -12,4 +14,6 @@ export {
   SearchBar,
   Input,
   Banner,
+  Modal,
+  Content
 };

@@ -12,6 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className='relative'>
         <NavBar />
+        <div id="modal-root"></div>
         {children}
         <Footer />
       </body>
